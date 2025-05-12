@@ -1,1 +1,165 @@
+1，scores.insert(index, element)
+​作用：在列表的指定索引位置插入元素，原位置及后续元素自动后移
+​参数：
+index：插入位置的索引（从0开始计算）
+element：要插入的元素
+score是列表，insert：插入函数
 
+'''class Car:
+    def __init__(self,make,model,year):
+        self.make=make
+        self.model=model
+        self.year=year
+        self.odometer_reading=0
+    def get_descriptive_name(self):
+        print(f'{self.make} \n{self.model} \n{self.year}')
+    def read_odometer(self):
+        print('This car has '+str(self.odometer_reading)+' miles on it.')
+    def update_odometer(self,mileage):
+        self.update_odometer=mileage
+        if mileage>=self.odometer_reading:
+            print(f'This car has {self.update_odometer} miles on it.')
+        else:
+             print('not roll back odometer')
+    def increment_odometer(self,miles):
+        self.update_odometer+=miles
+class electriccar(Car):
+    def __init__(self,make,model,year):
+        super().__init__(make,model,year)
+        self.battery_size=70
+
+    def describe_battery(self):
+        print('This car has '+str(self.battery_size)+' battery.')
+ecar=electriccar('Ford','BMW','2021')
+ecar.get_descriptive_name()
+ecar.describe_battery()'''
+from fsspec.implementations import data
+
+'''my_car=Car('Tesla','a4','2020')
+my_car.get_descriptive_name()
+my_car.update_odometer(23)'''
+
+'''class restaurant:
+    def __init__(self,name,cuisine):
+        self.name = name
+        self.cuisine = cuisine
+        self.number =28
+
+    def describe_restaurant(self):
+        print(f'{self.name}\n{self.cuisine}')
+    def open_restaurant(self):
+        print(f'{self.name}正在营业')
+    def set_number(self,num):
+        self.number=num
+        print('serve number is '+str(self.number))
+    def increment_number(self,maybe_number):
+        self.number+=maybe_number
+        print('increment number is '+str(self.number))
+a=restaurant('yosh','niurouu,milk')
+a.describe_restaurant()
+a.open_restaurant()
+a.increment_number(10)'''
+
+'''with open('0502.txt','r') as file:
+    data=file.read()
+    print(data)'''
+
+'''file = open('0502.txt', 'r', encoding='utf-8')
+print(file.read())
+file.close()'''
+
+'''file=open('0502.txt', 'w', encoding='utf-8')
+file.write('i love you.\n')
+file.write('so what!\n')
+file.close()
+
+file=open('0502.txt', 'a', encoding='utf-8')
+file.write('i love you because you are cute\n')
+file.close()'''
+
+from pathlib import Path
+import json
+
+#save
+'''username = input("What is your name? ")
+filename='username.json'
+with open(filename,'w') as file:
+    json.dump(username,file)
+    print('Your name is saved successfully!')'''
+'''filename='username.json'
+with open(filename,'r') as file:
+    username=json.load(file)
+    print('welcome to  '+username)'''
+
+'''number=[2,3,5,7,89,1]
+filename='number.json'
+with open(filename,'w') as file:
+    json.dump(number,file)'''
+
+
+'''try:
+    with open(filename,'r') as file:
+        username=json.load(file)
+except FileNotFoundError:
+    username=input('Enter your username')
+    with open(filename,'w') as file:
+        json.dump(username,file)
+        print( 'we will remember '+username+'!')
+else:
+    print('welcome back '+username+'!')'''
+
+'''import json
+favorite=input('What you are favorite number is ? ')
+filename='favorite.json'
+with open(filename,'w')as file:
+    json.dump(favorite,file)
+    print( 'we will remember '+favorite+'!')
+    file.close()
+filename='favorite.json'
+with open(filename,'r') as file:
+    favorite=json.load(file)
+    print( 'i know your number is '+favorite+'!')'''
+
+
+'''import json
+number=[2,3,5,7,89,1]
+filename='number.json'
+with open(filename,'w')as file:
+    json.dump(number,file)
+
+import json
+filename='number.json'
+with open(filename)as file:
+    number=json.load(file)
+    print(number)'''
+
+
+'''import csv
+import random
+
+with open('scorce.csv','w')as file:
+    writer=csv.writer(file)
+    writer.writerow(['name','english','math','science'])
+    names=['luke','yosh','lucy']
+    for name in names:
+        scorce=[random.randrange(50,101)for _ in range(3)]
+        scorce.insert(0,name)
+        writer.writerow(scorce)'''
+
+'''import csv
+
+with open('scores.csv', 'r') as file:
+    reader = csv.reader(file, delimiter='|')
+    for data_list in reader:
+        print(reader.line_num, end='\t')
+        for elem in data_list:
+            print(elem, end='\t')
+        print()'''
+'''import csv
+with open('scorce.csv','r')as file:
+    reader=csv.reader(file)
+    for data_list in reader:
+        print(reader.line_num,end='\t')
+        for elem in data_list:
+            print(elem,end='\t')
+        print()'''
